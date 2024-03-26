@@ -204,7 +204,9 @@ html,body,.output{
     .page.one-page:not(:has(img, main)){
         display: none;
     }
-
+    .article-book {
+        perspective-origin: 34px 159px;
+    }
     .book .cover-front{
         transform:rotateY(180deg);
     
