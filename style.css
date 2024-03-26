@@ -17,8 +17,9 @@ html,body,.output{
 .article-book {
     perspective: 1000px;
     perspective-origin: -200px 300px;
-    margin: 60px 20px;
+    margin: 60px 60px 60px 20px;
     direction: ltr;
+
 }
 
 .face.content {
@@ -52,7 +53,7 @@ html,body,.output{
     transform: translateZ(-3px);
     --width-width: 1px;
     --height: calc(var(--height-page) - 15px);
-    --width: calc(var(--width-page) - 4px);
+    --width: calc(var(--width-page) - 3px);
     --border-radius:0px;
 }
 .page.one-page .face{
@@ -69,10 +70,18 @@ html,body,.output{
     background-size: cover;
 
 }
-.page-1{
-    transform: translateZ(-4px);
+.page.page-1{
+    transform: translateZ(calc(-0.5 * var(--width-width)));
+    --width-width: var(--width-book);
+    --width: calc(var(--width-page) - 10px);
 }
+.page.page-1 .left{
+    background-image: url('./img/pages.jpg');
+}
+.page.page-1 :is(.top, .bottom){
+    background-image: url('./img/pages-rotate.jpg');
 
+}
 .cover-front{
     transform-origin: calc( var(--width) / 2);
     transition: transform 1.5s 0.01s;
@@ -92,10 +101,7 @@ html,body,.output{
     transition: transform 1.5s 0.01s ;
 
 }
-.book:hover{
-    transform:rotate3d(0,1, 0, 1deg);
-    /* width: var(--width-page); */
-}
+
 /* .books{
     padding: 0px 120px;
     transition: padding 1.5s;
@@ -105,8 +111,6 @@ html,body,.output{
 } */
 
 .book{
-    transform:rotate3d(1,1, 1, 12deg);
-    transition: transform 1.5s, width 1.5s;
     transform-style: preserve-3d;
     backface-visibility: visible;
 
@@ -204,11 +208,10 @@ html,body,.output{
     .page.one-page:not(:has(img, main)){
         display: none;
     }
-    .article-book {
+    /* .article-book {
         perspective-origin: 34px 159px;
-        position: relative;
-        left: -70px;
-    }
+
+    } */
     .book .cover-front{
         transform:rotateY(180deg);
     
@@ -231,8 +234,6 @@ html,body,.output{
         flex-direction: column;
         align-items: center;
     }
-    .article-book{
-        margin: 0;
-    }
+
 
  }

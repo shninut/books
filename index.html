@@ -73,21 +73,22 @@
       <script>
         const oneBookPage = document.querySelector('.one-page');
 
-        for (let i = 1; i < 23; i++) {
-          const cloneOneBookPage = oneBookPage.cloneNode(true);
-          cloneOneBookPage.querySelector(".content").innerHTML = '';
-          cloneOneBookPage.className = 'page one-page';
-          cloneOneBookPage.style.transform = `translateZ(-${(i*2)+4}px) `;
-          oneBookPage.after(cloneOneBookPage);
-        }
-
-
-        // // copy book
-        // const book = document.querySelector('.article-book');
-        // for (let i = 0; i < 20; i++) {
-        //   const cloneBook = book.cloneNode(true);
-        //   book.after(cloneBook)   
+        // for (let i = 1; i < 23; i++) {
+        //   const cloneOneBookPage = oneBookPage.cloneNode(true);
+        //   cloneOneBookPage.querySelector(".content").innerHTML = '';
+        //   cloneOneBookPage.className = 'page one-page';
+        //   cloneOneBookPage.style.transform = `translateZ(-${(i*2)+4}px) `;
+        //   cloneOneBookPage.querySelector('.front').style.backgroundPositionY = `${i*2}px`;
+        //   oneBookPage.after(cloneOneBookPage);
         // }
+
+
+        // copy book
+        const book = document.querySelector('.article-book');
+        for (let i = 0; i < 20; i++) {
+          const cloneBook = book.cloneNode(true);
+          book.after(cloneBook)   
+        }
       </script>
 </body>
 </html>
