@@ -207,7 +207,7 @@ html,body,.output{
     .article-book {
         perspective-origin: 34px 159px;
         position: relative;
-        left: -100px;
+        left: -70px;
     }
     .book .cover-front{
         transform:rotateY(180deg);
@@ -229,6 +229,7 @@ html,body,.output{
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
+        align-items: center;
     }
     .article-book{
         margin: 0;
