@@ -1,0 +1,54 @@
+<details dir="rtl">
+    <summary>סיבוב</summary>
+<div>
+    <div>
+        <label for="rangeDeg">מעלות</label>
+        <input type="range" id="rangeDeg" min="0" max="360" value="0" list="markersDeg" 
+            oninput="changeRange()"/>
+
+    </div>
+    <div>
+        <label for="rangeX">X</label>
+        <input type="range" id="rangeX" min="-3" max="3" list="markersXYZ" 
+            oninput="changeRange()"/>
+
+    </div>  
+    <div>
+        <label for="rangeY">Y</label>
+        <input type="range" id="rangeY" min="-3" max="3" list="markersXYZ"
+            oninput="changeRange()"/>
+    </div>
+    <div>
+        <label for="rangZ">Z</label>
+        <input type="range" id="rangeZ" min="-3" max="3" value="0" step="1" list="markersXYZ"
+            oninput="changeRange()"/>
+    </div>    
+    <datalist id="markersDeg">
+        <option value="0"></option>
+        <option value="45"></option>
+        <option value="90"></option>
+        <option value="135"></option>
+        <option value="180"></option>
+        <option value="225"></option>
+        <option value="270"></option>
+        <option value="315"></option>
+        <option value="360"></option>
+    </datalist>
+    <datalist id="markersXYZ">
+        <option value="-3"></option>
+        <option value="-2"></option>
+        <option value="-1"></option>
+        <option value="0"></option>
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+    </datalist>   
+</div>
+</details>
+
+
+<style>
+    summary{
+        cursor: pointer;
+    }
+</style>

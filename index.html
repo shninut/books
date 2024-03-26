@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="change-rotate3d"></div>
     <div id="books" class="books">
         <article class="article-book">
           <div class="book">
@@ -73,16 +74,39 @@
       <script>
         const oneBookPage = document.querySelector('.one-page');
 
-        // for (let i = 1; i < 23; i++) {
-        //   const cloneOneBookPage = oneBookPage.cloneNode(true);
-        //   cloneOneBookPage.querySelector(".content").innerHTML = '';
-        //   cloneOneBookPage.className = 'page one-page';
-        //   cloneOneBookPage.style.transform = `translateZ(-${(i*2)+4}px) `;
-        //   cloneOneBookPage.querySelector('.front').style.backgroundPositionY = `${i*2}px`;
-        //   oneBookPage.after(cloneOneBookPage);
-        // }
+        
+        function loadChangeRotate3d() {
+          // (A) FETCH
+          fetch("./change-rotate3d.html")
+        
+          // (B) RETURN THE RESULT AS TEXT
+          .then(res => {
+            if (res.status != 200) { throw new Error("Bad Server Response"); }
+            return res.text();
+          })
+        
+          // (C) PUT LOADED CONTENT INTO <DIV>
+          .then(html => document.getElementById("change-rotate3d").innerHTML = html)
+        
+          // (D) HANDLE ERRORS - OPTIONAL
+          .catch(err => console.error(err));
+        }
+        loadChangeRotate3d();
 
+        function changeRange(){
+        const x = document.getElementById("rangeX").value;
+        const y = document.getElementById("rangeY").value;
+        const z = document.getElementById("rangeZ").value;
+        const a = document.getElementById("rangeDeg").value;
+        const elements = document.getElementsByClassName('book');
+        for (const e of elements) {
+          e.style.transform=`rotate3d(${x}, ${y}, ${z}, ${a}deg)`;
+          console.log(x,y,z,a);
 
+        }
+        
+        // transform: rotate3d(1, 1, 1, 45deg);
+        }
         // copy book
         const book = document.querySelector('.article-book');
         for (let i = 0; i < 100; i++) {
