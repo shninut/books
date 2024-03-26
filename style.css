@@ -241,8 +241,14 @@ html,body,.output{
 #change-rotate3d {
     color: white;
     margin: 50px 50px 50px auto;
-    padding: 10px 20px;
     background: #78420f;
     border-radius: 20px;
     width: max-content;
+}
+#change-rotate3d summary{
+    padding: 10px 20px;
+
+}
+#change-rotate3d>details>div{   
+    padding: 10px 20px;
 }

@@ -9,18 +9,18 @@
     </div>
     <div>
         <label for="rangeX">X</label>
-        <input type="range" id="rangeX" min="-3" max="3" list="markersXYZ" 
+        <input type="range" id="rangeX" min="0" max="6" value="0"  list="markersXYZ" 
             oninput="changeRange()"/>
 
     </div>  
     <div>
         <label for="rangeY">Y</label>
-        <input type="range" id="rangeY" min="-3" max="3" list="markersXYZ"
+        <input type="range" id="rangeY" min="0" max="6" value="0" list="markersXYZ"
             oninput="changeRange()"/>
     </div>
     <div>
         <label for="rangZ">Z</label>
-        <input type="range" id="rangeZ" min="-3" max="3" value="0" step="1" list="markersXYZ"
+        <input type="range" id="rangeZ" min="0" max="6" value="0" step="1" list="markersXYZ"
             oninput="changeRange()"/>
     </div>    
     <datalist id="markersDeg">
@@ -35,13 +35,13 @@
         <option value="360"></option>
     </datalist>
     <datalist id="markersXYZ">
-        <option value="-3"></option>
-        <option value="-2"></option>
-        <option value="-1"></option>
         <option value="0"></option>
         <option value="1"></option>
         <option value="2"></option>
         <option value="3"></option>
+        <option value="4"></option>
+        <option value="5"></option>
+        <option value="6"></option>
     </datalist>   
 </div>
 </details>
@@ -50,5 +50,8 @@
 <style>
     summary{
         cursor: pointer;
+    }
+    input[type="range"]{
+        direction: ltr;
     }
 </style>
