@@ -206,6 +206,8 @@ html,body,.output{
     }
     .article-book {
         perspective-origin: 34px 159px;
+        position: relative;
+        left: -100px;
     }
     .book .cover-front{
         transform:rotateY(180deg);
