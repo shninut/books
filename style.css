@@ -208,10 +208,12 @@ html,body,.output{
     .page.one-page:not(:has(img, main)){
         display: none;
     }
-    /* .article-book {
-        perspective-origin: 34px 159px;
+    .article-book {
+        /* perspective-origin: 34px 159px; */
+        margin: 0 auto;
+        transform: translateX(calc(-50% + 5px));
 
-    } */
+    }
     .book .cover-front{
         transform:rotateY(180deg);
     
@@ -233,6 +235,7 @@ html,body,.output{
         flex-wrap: nowrap;
         flex-direction: column;
         align-items: center;
+        margin: 0;
     }
 
 
